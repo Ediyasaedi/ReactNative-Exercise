@@ -1,5 +1,7 @@
 import moment from 'moment';
 import CryptoJS from 'crypto-js';
+import { BASE_URL, API_KEY, SECRET_KEY} from '@env'; 
+
 
 function getPath(url) {
     var pathRegex = /.+?\:\/\/.+?(\/.+?)(?:#|\?|$)/;
@@ -17,15 +19,17 @@ export function getTimestamp() {
 }
 
 export function generateSignature() {
-    const apiKey = '1eb7f84b-d733-43ef-8afa-9445615c0de2';
-    const secretKey = 'ab052233-ea70-4f8e-b042-1503de0f9c4d';
-    const queryString = getQueryString('https://apidev.btpn.com/cq01/Keyword');
-    const fromUrl = queryString.length == 0 ? getPath('https://apidev.btpn.com/cq01/Keyword') : `${getPath('https://apidev.btpn.com/cq01/Keyword')}?${queryString}`;
+    const apiKey = API_KEY;
+    const secretKey = SECRET_KEY;
+    const queryString = getQueryString(`${BASE_URL}/Keyword`);
+    const fromUrl = queryString.length == 0 ? getPath(`${BASE_URL}/Keyword`) : `${getPath(`${BASE_URL}/Keyword`)}?${queryString}`;
     const timestamp = getTimestamp();
     
     // postman.setEnvironmentVariable("BTPN_TIMESTAMP", timestamp);
     
     let input = `GET:${fromUrl}:${apiKey}:${timestamp}`;
+    console.log("input => ", input);
+    console.log("relative url => ", getPath(`${BASE_URL}/Keyword`))
 
     // postman.setEnvironmentVariable("TEST_REQUEST", input);
     

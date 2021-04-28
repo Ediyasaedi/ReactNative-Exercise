@@ -1,3 +1,4 @@
-import HeaderLogo from './header_logo';
+import HeaderLogo from './header/header_logo';
+import MainHeader from './header//main_header';
 
-export { HeaderLogo };
+export { HeaderLogo, MainHeader };

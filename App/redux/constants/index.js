@@ -1,1 +1,3 @@
 export const GET_KEYWORD_LIST = 'GET_KEYWORD_LIST';
+export const GET_USER_AUTH = 'GET_USER_AUTH';
+export const SET_IS_VALID_USER = 'SET_IS_VALID_USER';

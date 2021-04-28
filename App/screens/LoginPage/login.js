@@ -6,9 +6,9 @@ import { HeaderLogo } from '../../components/';
 const LoginScreen = ({ navigation }) => {
   return (
     <>
-    <HeaderLogo />
-    <View style={{flex: 9, flexDirection: 'row'}}>
+    <View style={{flex: 1, flexDirection: 'row', backgroundColor: 'white' }}>
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <HeaderLogo />
         <LoginForm navigation={navigation}/>
       </View>
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }} >
