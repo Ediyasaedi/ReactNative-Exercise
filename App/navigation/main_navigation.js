@@ -2,7 +2,7 @@ import React from 'react';
 import { LoginScreen, KeywordPage } from '../screens';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import DrawerNavigation from './drawer_navigation';
+import DrawerNavigation from './drawer_navigation/drawer_navigation';
 
 const Stack = createStackNavigator();
 

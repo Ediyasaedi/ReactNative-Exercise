@@ -7,12 +7,9 @@ import { getUserLogin } from '../../../redux/actions/authentication_user';
 export default LoginForm = ({ navigation }) => {
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
-    const userAuthInfo = useSelector((state) => state.userAuth.userInfo);
     const isValidUserState = useSelector((state) => state.userAuth.isValidUser);
     const dispatch = useDispatch();
 
-    console.log('balikan isValidUser => ',isValidUserState)
-    console.log('userAuthInfo => ', userAuthInfo)
     const checkLogin = () => {
         let data = {
             username: username,
