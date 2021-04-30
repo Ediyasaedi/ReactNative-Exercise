@@ -19,14 +19,14 @@ export default function DrawerContent(props) {
                     <Avatar.Icon size={38} icon="account" style={{ backgroundColor: '#fff'}} />
                 )}
                 label="Customer"
-                onPress={() => {}}
+                onPress={() => {props.navigation.navigate('CustomerPage')}}
             />
             <DrawerItem
                 icon={({ color, size }) => (
                     <Avatar.Icon size={38} icon="contacts" style={{ backgroundColor: '#fff'}} />
                 )}
                 label="Contact"
-                onPress={() => {}}
+                onPress={() => {props.navigation.navigate('ContactPage')}}
             />
             <DrawerItem
                 icon={({ color, size }) => (

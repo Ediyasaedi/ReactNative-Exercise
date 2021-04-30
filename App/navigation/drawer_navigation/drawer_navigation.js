@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Button, View, Text } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { MainDashboard } from '../../screens';
+import { MainDashboard, CustomerPage, ContactPage } from '../../screens';
 import { useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import DrawerContent from "./drawer_content";
@@ -51,12 +51,14 @@ function NotificationsScreen({ navigation }) {
 
 const Drawer = createDrawerNavigator();
 
-export default function DrawerNavigation() {
+export default function DrawerNavigation({navigation}) {
   return (
-      <Drawer.Navigator drawerContent={() => <DrawerContent />}>
+      <Drawer.Navigator initialRouteName="CustomerPage" drawerContent={() => <DrawerContent navigation={navigation}/>}>
             <Drawer.Screen name="MainDashboard" component={MainDashboard} />
             <Drawer.Screen name="Home" component={HomeScreen} />
             <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+            <Drawer.Screen name="CustomerPage" component={CustomerPage} />
+            <Drawer.Screen name="ContactPage" component={ContactPage} />
       </Drawer.Navigator>
   );
 }
